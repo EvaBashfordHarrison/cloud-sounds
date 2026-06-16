@@ -24,7 +24,7 @@ let clouds = []; // are they clouds? pick up and scan
 let wasSky = []; // storing an array of whether a pixel was blue 
 
 function setup() {
-  createCanvas(540, 960);
+  createCanvas(540, 702);
   frameRate(30);
 
   let constraints = {
