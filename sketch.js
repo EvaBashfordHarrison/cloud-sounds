@@ -27,10 +27,18 @@ function setup() {
   createCanvas(540, 960);
   frameRate(30);
 
-  cam = createCapture(VIDEO);
+  let constraints = {
+    video: {
+      facingMode: "environment" // Forces the back camera
+    },
+    audio: false // Optional: turns off mic if you don't need it
+  };
+
+  // 2. Pass the constraints object into your capture function
+  cam = createCapture(constraints);
   cam.elt.setAttribute('playsinline', '');
   cam.hide();
-  cam.size(windowWidth, windowHeight); 
+  cam.size(windowWidth, windowHeight);
   
   // tonejs 
   poly = new Tone.PolySynth(Tone.Synth, {
